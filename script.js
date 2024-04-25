@@ -23,7 +23,7 @@ const render = () => {
 
   // créer une boucle,
   // Ajoute x fois la carte au main
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 5; i++) {
     main.innerHTML += card();
   }
   return main;
@@ -48,3 +48,25 @@ for (let index = 0; index < btns.length; index++) {
   //const element = btns[index];
   btns[index].addEventListener("click", () => console.log("click"));
 }
+
+/** Code pour la gestion des cookies */
+/**
+ * 0/ Je déclare une variable de type number pour mémoriser le nb de cookie.
+ *      Valeur initiale 0
+ *
+ * 1/ Récupère notre bouton
+ * 2/ Sur le bouton, on écoute click
+ * 3/ a) on compte, on ajoute +1 à notre variable
+ *    b) Je récupère la balise p
+ *    c) Modifier le p, le texte
+ */
+let DonutNb = 0;
+
+/** DOM => document object model */
+document.getElementById("button").addEventListener("click", () => {
+  console.log("Click");
+  DonutNb = DonutNb + 1;
+  console.log(DonutNb);
+  document.getElementById("target").innerText = DonutNb;
+  document.getElementById("target2").innerText = DonutNb;
+});
